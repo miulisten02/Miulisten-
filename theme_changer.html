@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiuListen - Referral Bonus</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    header {
+      font-size: 1.8rem;
+      background-color: #1db954;
+      width: 100%;
+      padding: 1rem;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .referral-box {
+      background-color: #1c1c1c;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 0 15px rgba(0, 255, 128, 0.2);
+    }
+    .referral-box p {
+      margin: 0.5rem 0;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 1rem;
+      border-radius: 8px;
+      border: none;
+    }
+    .copy-btn {
+      margin-top: 1rem;
+      background-color: #1db954;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      color: white;
+    }
+    .ref-stats {
+      margin-top: 2rem;
+      background-color: #2a2a2a;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .ref-stats p {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>🔗 Referral Bonus</header>
+  <div class="referral-box">
+    <h2>Your Referral Link</h2>
+    <input type="text" id="referralLink" value="https://miulisten.in/ref/ARUN123" readonly>
+    <button class="copy-btn" onclick="copyLink()">📋 Copy Link</button>
+
+    <div class="ref-stats">
+      <p>👥 Total Referrals: <strong>15</strong></p>
+      <p>💰 Total Earned: <strong>₹380</strong></p>
+      <p>🏆 Top Referral: <strong>₹75</strong></p>
+      <p>🎁 Bonus Redeemable: <strong>₹130</strong></p>
+    </div>
+  </div>
+
+  <script>
+    function copyLink() {
+      const link = document.getElementById("referralLink");
+      link.select();
+      link.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Referral link copied! 🎉");
+    }
+  </script>
+</body>
+</html>
