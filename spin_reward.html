@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiuListen - Video Player</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #0e0e0e, #1a1a1a);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #111;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .nav-links a {
+      color: white;
+      margin-left: 1.5rem;
+      text-decoration: none;
+    }
+    .video-container {
+      margin-top: 2rem;
+      width: 90%;
+      max-width: 800px;
+      background-color: #222;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 255, 128, 0.2);
+    }
+    video {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .video-info {
+      margin-top: 1rem;
+    }
+    .video-info h2 {
+      margin: 0.5rem 0;
+    }
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+    .actions button {
+      padding: 0.6rem 1.2rem;
+      background-color: #1DB954;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .actions button:hover {
+      background-color: #169944;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🎥 MiuListen</div>
+    <nav class="nav-links">
+      <a href="#">Explore</a>
+      <a href="#">Upload</a>
+      <a href="#">Profile</a>
+    </nav>
+  </header>
+
+  <div class="video-container">
+    <video controls poster="https://i.imgur.com/x2C4d2r.png">
+      <source src="sample.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-info">
+      <h2>Feel The Beat - Music Video</h2>
+      <p>Category: Music / DJ</p>
+    </div>
+    <div class="actions">
+      <button>❤️ Like</button>
+      <button>💬 Comment</button>
+      <button>🔗 Share</button>
+    </div>
+  </div>
+</body>
+</html>
