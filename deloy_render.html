@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiuListen - Theme Changer</title>
+  <style>
+    :root {
+      --bg-color: #000;
+      --text-color: #fff;
+      --primary-color: #1db954;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    header {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 1rem;
+      font-size: 1.5rem;
+      border-radius: 8px;
+      width: 100%;
+      text-align: center;
+    }
+    .theme-selector {
+      margin-top: 2rem;
+      background-color: #1c1c1c;
+      padding: 1.5rem;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 500px;
+    }
+    .theme-option {
+      margin: 1rem 0;
+    }
+    button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      margin: 0.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: var(--primary-color);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>🎨 Choose Your Theme</header>
+
+  <div class="theme-selector">
+    <div class="theme-option">
+      <button onclick="setTheme('dark')">🖤 Dark</button>
+      <button onclick="setTheme('light')">🤍 Light</button>
+      <button onclick="setTheme('blue')">🔵 Blue</button>
+      <button onclick="setTheme('purple')">🟣 Purple</button>
+      <button onclick="setTheme('sunset')">🌇 Sunset</button>
+    </div>
+  </div>
+
+  <script>
+    function setTheme(theme) {
+      const root = document.documentElement;
+      switch (theme) {
+        case 'dark':
+          root.style.setProperty('--bg-color', '#000');
+          root.style.setProperty('--text-color', '#fff');
+          root.style.setProperty('--primary-color', '#1db954');
+          break;
+        case 'light':
+          root.style.setProperty('--bg-color', '#fff');
+          root.style.setProperty('--text-color', '#000');
+          root.style.setProperty('--primary-color', '#007aff');
+          break;
+        case 'blue':
+          root.style.setProperty('--bg-color', '#001f3f');
+          root.style.setProperty('--text-color', '#ffffff');
+          root.style.setProperty('--primary-color', '#0074D9');
+          break;
+        case 'purple':
+          root.style.setProperty('--bg-color', '#2E003E');
+          root.style.setProperty('--text-color', '#ffffff');
+          root.style.setProperty('--primary-color', '#B10DC9');
+          break;
+        case 'sunset':
+          root.style.setProperty('--bg-color', '#FF6B6B');
+          root.style.setProperty('--text-color', '#fff');
+          root.style.setProperty('--primary-color', '#FFAA5B');
+          break;
+      }
+    }
+  </script>
+</body>
+</html>
+#e32642e6
