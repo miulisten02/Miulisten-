@@ -1,0 +1,9 @@
+
+services:
+  - type: web
+    name: miulisten
+    env: static
+    staticPublishPath: .
+    branch: main
+    buildCommand: ""
+    pullRequestPreviewsEnabled: true
