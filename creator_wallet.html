@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiuListen - Spin & Win</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom right, #000000, #1f1f1f);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 1rem;
+      background: #111;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .wheel-box {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin-top: 100px;
+      border-radius: 50%;
+      border: 8px solid #1DB954;
+      overflow: hidden;
+    }
+    .wheel {
+      width: 100%;
+      height: 100%;
+      background: conic-gradient(
+        #1DB954 0deg 60deg,
+        #ff9800 60deg 120deg,
+        #f44336 120deg 180deg,
+        #2196f3 180deg 240deg,
+        #9c27b0 240deg 300deg,
+        #ffeb3b 300deg 360deg
+      );
+      transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
+      border-radius: 50%;
+    }
+    .pointer {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 30px solid #ffffff;
+    }
+    .spin-btn {
+      margin-top: 30px;
+      padding: 1rem 2rem;
+      background-color: #1DB954;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .spin-btn:hover {
+      background-color: #19a94b;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>🎡 Miu Spin Rewards</header>
+
+  <div class="wheel-box">
+    <div class="pointer"></div>
+    <div class="wheel" id="wheel"></div>
+  </div>
+
+  <button class="spin-btn" onclick="spinWheel()">🎯 Spin Now</button>
+  <div class="result" id="result"></div>
+
+  <script>
+    const wheel = document.getElementById("wheel");
+    const result = document.getElementById("result");
+
+    function spinWheel() {
+      const prizes = ["Free Audio 🎵", "Paid Audio 🎧", "₹5 Prize 💸", "Voucher 🎁", "No Luck 🙃", "₹10 Bonus 💰"];
+      const degree = Math.floor(3600 + Math.random() * 360);
+      wheel.style.transform = `rotate(${degree}deg)`;
+
+      const prizeIndex = Math.floor(((degree % 360) / 60)) % prizes.length;
+      setTimeout(() => {
+        result.innerText = `🎉 You Won: ${prizes[prizeIndex]}`;
+      }, 4200);
+    }
+  </script>
+</body>
+</html>
